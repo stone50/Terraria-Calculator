@@ -1,11 +1,12 @@
-import math
-import dataHandler
+from math import ceil
+from .dataHandler import getAllRecipes, updateRecipeData
+from .Recipe import Recipe
 
-allRecipes = dataHandler.getAllRecipes()
+allRecipes = getAllRecipes()
 
 def updateAllRecipes():
-    dataHandler.updateRecipeData()
-    allRecipes = dataHandler.getAllRecipes()
+    updateRecipeData()
+    allRecipes = getAllRecipes()
 
 def findIngredients(itemName, itemCount = 1):
     if not itemName in allRecipes:
@@ -13,9 +14,9 @@ def findIngredients(itemName, itemCount = 1):
     return _findIngredientsRecurive(itemName, itemCount)
 
 def _findIngredientsRecurive(itemName, itemCount = 1):
-    itemMultiplier = math.ceil(itemCount / allRecipes[itemName].amount)
+    itemMultiplier = ceil(itemCount / allRecipes[itemName].amount)
 
-    outRecipe = dataHandler.Recipe(
+    outRecipe = Recipe(
         itemName,
         allRecipes[itemName].amount * itemMultiplier,
         {},

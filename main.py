@@ -1,18 +1,18 @@
-import helpers.calculator as calculator
+from helpers.calculator import allRecipes, updateAllRecipes, findIngredients
 
 '''
 Useful functions and variables
 
-calculator.allRecipes = a dictionary of all recipes
+allRecipes = a dictionary of all recipes
 
-calculator.updateAllRecipes() = updates all recipes
+updateAllRecipes() = updates all recipes
 
 note:   This scrapes the Terraria wiki.
         This could fail if the wiki is updated.
         This is relatively slow.
         Recommended to only use this if the crafting recipes change
 
-calculator.findIngredients(itemName, itemCount) = returns a nested recipe
+findIngredients(itemName, itemCount) = returns a nested recipe
 
 note:   Recipes returned will be of the format:
         {
@@ -26,4 +26,4 @@ note:   Recipes returned will be of the format:
 '''
 
 # Example
-print(calculator.findIngredients("Night's Edge"))
+print(findIngredients("Night's Edge"))
