@@ -1,9 +1,9 @@
-from helpers.calculator import allRecipes, updateAllRecipes, findIngredients
+from helpers.calculator import getRecipes, updateAllRecipes, findIngredients
 
 '''
 Useful functions and variables
 
-allRecipes = a dictionary of all recipes
+getRecipes() = returns a dictionary of all recipes
 
 updateAllRecipes() = updates all recipes
 

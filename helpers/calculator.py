@@ -6,7 +6,11 @@ allRecipes = getAllRecipes()
 
 def updateAllRecipes():
     updateRecipeData()
+    global allRecipes
     allRecipes = getAllRecipes()
+
+def getRecipes():
+    return allRecipes
 
 def findIngredients(itemName, itemCount = 1):
     if not itemName in allRecipes:
